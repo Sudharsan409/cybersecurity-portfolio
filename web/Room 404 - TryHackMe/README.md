@@ -143,8 +143,8 @@ Even simple misconfigurations like exposing a `.git` directory can lead to **com
 
 ## 👨‍💻 Author
 
-Sudharsan Chandran
-Cybersecurity Enthusiast | CTF Player
+# Sudharsan Chandran
+# Cybersecurity Engineer | Security Researcher | Cloud Security Enthusiast
 
 ---
 
