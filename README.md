@@ -14,11 +14,11 @@ This repository documents my practical security learning journey through hands-o
 
 Each writeup focuses on understanding:
 
-🔎 Reconnaissance and enumeration techniques
-🧩 Vulnerability identification
-⚔️ Exploitation methodologies
-🛡️ Security impact analysis
-🔐 Defensive recommendations and remediation
+ - 🔎 Reconnaissance and enumeration techniques
+ - 🧩 Vulnerability identification
+ - ⚔️ Exploitation methodologies
+ - 🛡️ Security impact analysis
+ - 🔐 Defensive recommendations and remediation
 
 The goal is not only to capture the solution, but to understand the attacker mindset, security weaknesses, and real-world mitigation strategies.
 
@@ -88,23 +88,20 @@ Areas explored:
 ---
 
 
-# 📚 Writeup Categories
+## 📚 Writeup Categories
 
 📁 cybersecurity-writeups
 
-├── ⚔️ Offensive Security
-│   ├── 🌐 Web Exploitation
-│   │   ├── TryHackMe
-│   │   ├── Hack The Box
-│   │   └── Vulnerability Research
-│
-├── 🌐 Network Security
-│
-├── 🔍 OSINT
-│
-├── 🛡️ SIEM & Detection
-│
-└── 🛠️ Security Tools & Techniques
+- ⚔️ Offensive Security  
+  - 🌐 Web Exploitation  
+    - TryHackMe  
+    - Hack The Box  
+    - Vulnerability Research  
+
+- 🌐 Network Security  
+- 🔍 OSINT  
+- 🛡️ SIEM & Detection  
+- 🛠️ Security Tools & Techniques  
 
 # 📝 Security Research Methodology
 
