@@ -1,0 +1,12 @@
+gobuster
+
+gobuster dir -u http://<TARGET_IP>:8080 -w /usr/share/wordlists/wordlists/wordlist.txt
+
+wget
+
+wget -r -np -R "index.html*" http://10.129.160.190:8080/.git/
+
+
+git checkout
+
+got checkout -- .
