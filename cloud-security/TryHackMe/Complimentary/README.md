@@ -250,7 +250,7 @@ AWS.config.credentials.get(function (err) {
 <details>
 <summary>📸 Screenshot - Retrieved Records</summary>
 
-![Records](docs/screenshots/git-exposure.png)
+![Records](docs/screenshots/payload.png)
 
 </details>
 
@@ -332,7 +332,7 @@ Exposed frontend code combined with excessive AWS permissions can result in comp
 
 **Sudharsan Chandran**
 
-Cybersecurity Engineer | Security Researcher | Cloud Security Enthusiast
+**Cybersecurity Engineer | Offensive Security | Detection Engineering | Security Automation**
 
 ---
 
