@@ -372,7 +372,7 @@ Network captures can reveal:
 
 **Sudharsan Chandran**
 
-Cybersecurity Engineer | Security Researcher | Automation Specialist
+**Cybersecurity Engineer | Offensive Security | Detection Engineering | Security Automation**
 
 Areas of Interest:
 

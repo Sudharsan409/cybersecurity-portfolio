@@ -275,7 +275,7 @@ AI systems must be designed with:
 # 👨‍💻 Author
 
 **Sudharsan Chandran**
-Cybersecurity Engineer | Security Researcher | AI Security Enthusiast
+**Cybersecurity Engineer | Security Researcher | AI Security Enthusiast | Offensive Security | Detection Engineering | Security Automation**
 
 ---
 
