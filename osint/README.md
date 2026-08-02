@@ -31,13 +31,14 @@ The focus is on extracting actionable intelligence from **publicly available dat
 
 ```mermaid
 flowchart LR
-    A[📄 Input Data<br/>Screenshot / Clues] --> B[🔎 Initial Analysis]
-    B --> C[🧩 Extract Identifiers<br/>(Email / Username)]
-    C --> D[🌐 External Pivot<br/>(Gravatar / Public Services)]
+    A["📄 Input Data<br/>Screenshot / Clues"] --> B[🔎 Initial Analysis]
+    B --> C["🧩 Extract Identifiers<br/>(Email / Username)"]
+    C --> D["🌐 External Pivot<br/>(Gravatar / Public Services)"]
     D --> E[📡 Profile Discovery]
-    E --> F[🔐 Hidden Data Identified<br/>(Encoded Content)]
-    F --> G[🖥️ Decode & Analyse<br/>(Base64)]
-    G --> H[🏁 Intelligence Output<br/>(Flag / Insight)]
+    E --> F["🔐 Hidden Data Identified<br/>(Encoded Content)"]
+    F --> G["🖥️ Decode & Analyse<br/>(Base64)"]
+    H["🏁 Intelligence Output<br/>(Flag / Insight)"]
+
 ```
 
 ---
