@@ -2529,6 +2529,3 @@ Respect:
 Passive reconnaissance does not automatically authorize active testing.
 
 ---
-
-```
-```
