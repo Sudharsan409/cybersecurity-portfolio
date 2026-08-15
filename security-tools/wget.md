@@ -37,6 +37,8 @@ The `.git` directory contains multiple nested objects and metadata files.
 * `-np` restricted downloads to the exposed `.git` directory only
 * `-R "index.html*"` removed unnecessary auto-generated directory pages
 
+Sample
+
 ### ✅ Result
 
 The exposed repository was successfully downloaded locally.
